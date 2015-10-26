@@ -3,7 +3,7 @@ This is a sample drop wizard used as a base for teaching new starts about integr
 
 ##Build and Run
 ```
-git clone https://github.com/andrew-js-wright/login-service.git
+git clone https://github.com/kainos-training/login-service.git
 cd login-service
 mvn package
 java -jar target/login-service-1.jar server
