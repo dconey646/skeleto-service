@@ -11,6 +11,9 @@ public class LoginConfiguration extends Configuration {
     @NotEmpty
     private String password = "password";
 
+    public LoginConfiguration() {
+    }
+
     @JsonProperty
     public String getUserName() {
         return userName;
