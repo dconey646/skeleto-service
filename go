@@ -1,2 +1,2 @@
 mvn clean package
-java -jar target/login-service-1.jar server
+java -jar target/login-service-1.jar server configuration.yml
