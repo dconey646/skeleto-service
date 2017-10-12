@@ -10,7 +10,6 @@ import com.kainos.training.login.service.model.User;
 
 @Path("/login")
 @Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
 public class LoginResource {
 	private final String requiredUsername;
 	private final String requiredPassword;
@@ -21,8 +20,10 @@ public class LoginResource {
 	}
 	
 	@POST
-	public Response login(User user) {
-
+	public Response login(@FormParam("username") String username, @FormParam("password") String password) {
+		User user = new User();
+		user.setUsername(username);
+		user.setPassword(password);
 		if (user.getUsername() != null && user.getUsername().equalsIgnoreCase(requiredUsername)) {
 			if (user.getPassword() != null && user.getPassword().equals(requiredPassword)) {
 				return Response.status(Response.Status.NO_CONTENT).build();
